@@ -37,8 +37,6 @@ const App = () => {
 
   // Adicionando usuario
   const  addNewUser = async () => {
-    // Navegando entre paginas
-    navegar("/usuarios")
 
     const name = inputName.current.value
     const  age = inputAge.current.value
@@ -52,6 +50,9 @@ const App = () => {
     const {data: newUser} = await axios.post(`${baseUrl}`, {name: name, age: age})
 
      setUser([...user, newUser])
+    
+    // Navegando entre paginas
+    navegar("/usuarios")
 
   }
 
