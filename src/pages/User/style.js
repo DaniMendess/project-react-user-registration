@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Background from "../../assets/bg2.svg"
 
-import {Link} from "react-router-dom"
+
 
 
 export const Container = styled.div`
@@ -29,47 +29,37 @@ export const ContainerIten = styled.div`
     backdrop-filter: blur(22.5px);
 `;
 
-export const H1 = styled.h1`
-    display: flex;
-    justify-content: center;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 40px;
-    color: #FFFFFF;
-`;
 
+// export const Button = styled.button`
+//     width: 342px;
+//     height: 67px;
+//     background: transparent;
+//     border-radius: 14px;
+//     border: 1px solid #FFFFFF;
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 15px;
+//     line-height: 20px;
+//     color: #ffffff;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 15px;
+//     cursor: pointer;
+//    
 
-export const Button = styled(Link)`
-    width: 342px;
-    height: 67px;
-    background: transparent;
-    border-radius: 14px;
-    border: 1px solid #FFFFFF;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 20px;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    cursor: pointer;
-    margin-top: 50px ;
+//     &:hover {
+//         opacity: 0.9;
+//     }
 
-    &:hover {
-        opacity: 0.9;
-    }
+//     &:active {
+//         opacity: 0.7;
+//     }
 
-    &:active {
-        opacity: 0.7;
-    }
-
-    img {
-        transform: scaleX(-1);
-    }
-`;
+//     img {
+//         transform: scaleX(-1);
+//     }
+// `;
 
 export const Users = styled.li `
     display: flex;

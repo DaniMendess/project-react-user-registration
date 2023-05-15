@@ -1,11 +1,18 @@
 import React, {useState, useEffect}  from 'react';
 
+import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
-import {Container,Image,ContainerIten, H1,Button, Users} from '../User/style'
+import {Container,Image, Users} from '../User/style'
 
 import People from '../../assets/peoplo.svg'
+
+import H1 from '../../components/Title'
+import  ContainerIten  from '../../components/ContainerItens';
+import Button from '../../components/Button';
+
+
 
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
@@ -40,11 +47,17 @@ const Usuario = () => {
     setUser(updateUser)
   }
 
+  const navegar = useNavigate()
+
+  function goBack (){
+    navegar("/")
+  }
+
   // Aqui nesse return a gente sempre retorna código HTML
   return(
     <Container>
      <Image src={People}/>
-      <ContainerIten>
+      <ContainerIten MyProp={true}>
         <H1>Usuários</H1>
         
         <ul>
@@ -58,7 +71,7 @@ const Usuario = () => {
               ))
             }
         </ul>
-        <Button to="/"><img alt="arrow-seta" src={Arrow} width="17"/>Voltar </Button>
+        <Button MyProp={true} onClick={goBack}><img alt="arrow-seta" src={Arrow} width="17"/>Voltar </Button>
       </ContainerIten>
     </Container>
   );

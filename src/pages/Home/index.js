@@ -1,8 +1,16 @@
 import React, {useState, useRef}  from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 
-import {Container,Image,ContainerIten, H1,P, Input,Button} from '../Home/style'
+import {Container,Image,P, Input} from '../Home/style'
+
+import H1  from '../../components/Title';
+
+import  ContainerIten from '../../components/ContainerItens';
+
+import  Button from '../../components/Button';
 
 import User from '../../assets/user.svg'
 
@@ -25,10 +33,12 @@ const App = () => {
   //Estado idade do usuario, pegando valor do input idade
   const inputAge = useRef()
 
-
+  const navegar = useNavigate()
 
   // Adicionando usuario
   const  addNewUser = async () => {
+    // Navegando entre paginas
+    navegar("/usuarios")
 
     const name = inputName.current.value
     const  age = inputAge.current.value
@@ -40,6 +50,7 @@ const App = () => {
     const {data: newUser} = await axios.post("http://localhost:3002/users", {name: name, age: age})
 
      setUser([...user, newUser])
+
   }
 
   //Deletando usuario
@@ -56,7 +67,7 @@ const App = () => {
         <Input ref={inputName} placeholder="Nome"></Input>
         <P>Idade</P>
         <Input ref={inputAge} placeholder="Idade"></Input>
-        <Button to="/usuarios" onClick={addNewUser}>Cadastrar <img alt="arrow-seta" src={Arrow} width="17"/></Button>
+        <Button  onClick={addNewUser}>Cadastrar <img alt="arrow-seta" src={Arrow} width="17"/></Button>
         
       </ContainerIten>
     </Container>
