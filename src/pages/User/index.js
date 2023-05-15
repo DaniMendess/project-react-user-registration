@@ -26,10 +26,12 @@ const Usuario = () => {
   // Estado criando novo usuário
   const [user , setUser] = useState([])
 
+  const baseUrl = "https://project-react-user-registration-two.vercel.app/users"
+
 
   useEffect(()=> {
     const fetchUser = async () => {
-      const {data: newUser} = await axios.get("http://localhost:3002/users")
+      const {data: newUser} = await axios.get(`${baseUrl}`)
 
       setUser(newUser);
     }
@@ -40,7 +42,7 @@ const Usuario = () => {
 
   const deleteUser = async (userId) => {
      
-    await axios.delete(`http://localhost:3002/users/${userId}`)
+    await axios.delete(`${baseUrl}/${userId}`)
 
     const updateUser = user.filter((user => user.id !== userId))
 

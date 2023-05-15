@@ -46,8 +46,10 @@ const App = () => {
     if(name === null || name === ""){
       return
     }
+
+    const baseUrl = "https://project-react-user-registration-two.vercel.app/users"
     
-    const {data: newUser} = await axios.post("http://localhost:3002/users", {name: name, age: age})
+    const {data: newUser} = await axios.post(`${baseUrl}`, {name: name, age: age})
 
      setUser([...user, newUser])
 
